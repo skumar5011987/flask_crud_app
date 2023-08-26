@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% include 'header.html'%}
+{% block title %} Create Student Records {%endblock%}
+
+{%block body%} 
+<div class='container col-sm-6 mt-4'>
+    <div class='d-flex justify-content-between'>
+        <h4>Add Student</h4>
+        <a href='/home' type="button" class="btn btn-success lg float-end">Home</a>
+    </div>
+    <hr>
+    <form action='' method='POST'>
+        <div class="mb-3">
+            <label for="sName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="sName" name="sName">
+        </div>
+        <div class="mb-3">
+            <label for="sRoll" class="form-label">Roll No</label>
+            <input type="text" class="form-control" id="sRoll" name="sRoll">
+        </div>
+        <div class="mb-3">
+            <label for="sCourse" class="form-label">Course</label>
+            <input type="text" class="form-control" id="sCourse" name="sCourse">
+        </div>
+        <div class="mb-3">
+            <label for="sEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="sEmail" name="sEmail">
+        </div>
+        <div class="mb-3">
+            <label for="sContact" class="form-label">Contact</label>
+            <input type="text" class="form-control" id="sContact" name="sContact">
+        </div>
+        <button type="submit" class="btn btn-success lg float-end">Submit</button>
+    </form>
+</div>
+
+{%endblock%}

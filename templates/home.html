@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% include 'header.html'%}
+{% block title %}Students List {% endblock %} 
+{%block body %}
+<div class="container">
+<div class="container col-8 mt-4">
+  <div class='d-flex justify-content-between'>
+    <h4 class='float-end'>Students List</h4>
+    <a href='/create' type="button" class="btn btn-success float-end">+Student</a>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Sr.</th>
+        <th scope="col">Roll</th>
+        <th scope="col">Name</th>
+        <th scope="col">Course</th>
+        <th scope="col">Email</th>
+        <th scope="col">Contact</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>   
+      {% if context %}       
+      {% for item in context %}
+          <tr>
+              <th scope="row">{{loop.index}}</th>
+              <td>{{item.roll}}</td>
+              <td>{{item.name}}</td>
+              <td>{{item.course}}</td>
+              <td>{{item.email}}</td>
+              <td>{{item.contact}}</td>
+              <td class='d-flex'>
+                  <a href='/{{item.roll}}/update'><i class="fa-solid fa-pen-to-square mx-2 "></i></a>              
+                  <a href='/{{item.roll}}/delete'><i class="fa-regular fa-trash-can mx-2"></i></a>
+              </td>
+          </tr>
+      {% endfor %}
+      {% else %}
+      <tr class='d-flex justify-content-center'>No Records Found </tr>
+      {%endif %}
+    </tbody>
+    </table>
+  </div>
+
+{%endblock%}

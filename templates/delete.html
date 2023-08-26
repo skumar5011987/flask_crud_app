@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% include 'header.html'%}
+{% block title %}Update Student {% endblock %} 
+{%block body %}
+<div class='container col-sm-6 mt-4'>
+<h4>Delete Student</h4>
+    <form action='', method="POST">
+        Click YES to continue
+        <input type='submit', value='YES' class="btn btn-danger"></input>
+        <a href='/home' class='btn btn-warning'>Cancel</a>
+    </form>
+</div>
+{%endblock%}
